@@ -1,2 +1,22 @@
 <!DOCTYPE html>
-<BODY></BODY>
+<head>
+
+</head>
+<body>
+    <h1></h1>
+</body>
+<script>
+    // fetch("http://api.quotable.io/random")
+    // .then((res)=>res.json())
+    // .then((quote)=>{
+    //     console.log(quote)
+
+
+    // })
+
+fetch("http://zenquotes.io/api/quotes/allow-cors",{mode:'cors'})
+.then((res)=>res.json())
+.then((quotes)=>{
+    console.log(quotes)
+})
+</script>
