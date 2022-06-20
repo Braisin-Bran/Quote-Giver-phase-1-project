@@ -20,3 +20,22 @@
 // User CHANGEs search input field and is given a few possibly related results
 
 // edit here for git push double check
+
+let randomQuote = fetch("http://api.quotable.io/random")
+.then((res)=>res.json())
+.then((quotes) => {
+    //console.log(quotes)
+})
+
+let random = document.querySelector("#random-click")
+random.addEventListener("click", (e) => {
+    e.preventDefault()
+    console.log("clicked")
+
+    let quoteSpace = document.createElement("p")
+    
+    quoteSpace.innerText = `${randomQuote}`
+
+    random.append(quoteSpace)
+})
+console.log(random)

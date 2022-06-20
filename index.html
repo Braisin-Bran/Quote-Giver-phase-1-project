@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <head>
-
+<Title>Quote Library</Title>
+<script src="./index.js" defer ></script>
+<link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-    <h1></h1>
-    <button> </button>
+<form>
+    <h1>Quote Library</h1>
+    <div id="random-click" class="1">
+        <button>Random Quote</button>
+    </div>
+    <img src="/src/Background.jpeg" alt="Books Background" />
+</form>
+
 </body>
-<script>
-    // fetch("http://api.quotable.io/random")
+
+    
+// fetch("http://api.quotable.io/random")
     // .then((res)=>res.json())
     // .then((quote)=>{
     //     console.log(quote)
@@ -15,9 +24,4 @@
 
     // })
 
-fetch("http://zenquotes.io/api/quotes/allow-cors",{mode:'cors'})
-.then((res)=>res.json())
-.then((quotes)=>{
-    console.log(quotes)
-})
-</script>
+
