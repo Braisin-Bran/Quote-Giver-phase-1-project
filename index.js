@@ -21,60 +21,19 @@
 
 // edit here for git push double check
 
-fetch("http://api.quotable.io/random")
-.then((res)=>res.json())
-.then((randomQuote) => {
-    //console.log(quotes)
-
-    let random = document.querySelector("#random-click")
-    let randomButtonClickCount = 0;
-random.addEventListener("click", (e) => {
-    // build counter
-    if (randomButtonClickCount === 1){
-        console.log(randomButtonClickCount)
-        e.preventDefault()
-    console.log("clicked")
-    let quoteSpace = document.createElement("p")
-    quoteSpace.innerText = `${randomQuote.content}`
-    random.append(quoteSpace)
-    randomButtonClickCount += 1
-    } else {
-        // window.location.reload()
-        e.preventDefault()
-    console.log("clicked")
-    let quoteSpace = document.createElement("p")
-    quoteSpace.innerText = `${randomQuote.content}`
-    randomButtonClickCount === 2
-    }
-
-
-})
-console.log(random)
-})
-
-
-
-
-//if it is the first randome quote 
-    //cool, pull quote
-
-//else, if it is the second or more
-    // build click counter
-    //that is when we pull new quote
-
-//
-
-
-
-
-
-
-
-
 // fetch("http://api.quotable.io/random")
-    // .then((res)=>res.json())
-    // .then((quote)=>{
-    //     console.log(quote)
-
-
-    // })
+// .then((res)=>res.json())
+// .then((randomQuote) => {
+    //console.log(quotes)
+    
+    let random = document.querySelector("#random-click")
+        random.addEventListener("click", () => {
+        fetch("http://api.quotable.io/random")
+        .then((res)=>res.json())
+        .then((randomQuote) => {
+            let quoteSpace = document.querySelector("#quote")
+            console.log(randomQuote)
+            quoteSpace.innerText = randomQuote.content
+            random.append(quoteSpace)
+        })
+})
