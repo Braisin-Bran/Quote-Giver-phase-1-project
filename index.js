@@ -19,25 +19,24 @@ random.addEventListener("click", () => {
     });
 });
 
-// grab html via query selector
-let form = document.querySelector("#author");
+let form = document.querySelector("form");
 console.log(form);
 form.addEventListener("submit", (event) => {
   event.preventDefault();
-  console.log("submitted");
-  //create event listener
+  let searchResult = document.querySelector("#search-bar").value;
   fetch(
     `http://api.quotable.io/search/quotes?query=${searchResult}&fields=author`
   )
     .then((res) => res.json())
     .then((authors) => {
-      console.log(authors);
-      let searchResult = document.querySelector("#search-bar").value;
-      let author = authors.filter(searchResult);
-      // e.preventDefault();
-      //filter by "author.value"
-      let quotes = document.createElement("p");
-      quotes.innerText = `${author.slug}`;
+      //   console.log(authors);
+      authors.forEach((author) => {
+        let resultAuthor = authors.content;
+        console.log(author);
+        e.preventDefault();
+        let quotes = document.createElement("p");
+        quotes.innerText = `${resultAuthor}`;
+      });
       searchResult.append(p);
     });
 });

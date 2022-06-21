@@ -8,5 +8,23 @@
 }
 :root
 {
-    --clr: #222327
+    --clr: #222327;
+
+}
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var();
+}
+.navigation
+{
+    width: 400px;
+    height: 70px;
+    background: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
