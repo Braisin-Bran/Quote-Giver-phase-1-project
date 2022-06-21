@@ -30,14 +30,15 @@ form.addEventListener("submit", (event) => {
     .then((res) => res.json())
     .then((authors) => {
       //   console.log(authors);
-      authors.forEach((author) => {
-        let resultAuthor = authors.content;
-        console.log(author);
+      authors.forEach((quoteList) => {
+        let resultAuthor = author.results.content;
+        console.log(authors);
         e.preventDefault();
         let quotes = document.createElement("p");
         quotes.innerText = `${resultAuthor}`;
+        quoteList.append(p);
       });
-      searchResult.append(p);
+      
     });
 });
 
