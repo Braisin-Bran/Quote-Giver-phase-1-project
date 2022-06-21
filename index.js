@@ -27,23 +27,27 @@ fetch("http://api.quotable.io/random")
     //console.log(quotes)
 
     let random = document.querySelector("#random-click")
+    let randomButtonClickCount = 0;
 random.addEventListener("click", (e) => {
     // build counter
-    //conditional, 
-        // if clicked for the first first time load quote BOOM
-        // if clicked for the second time, click count greater than 1
-            //window.location.reload() ((which is new jsom fetch = new quote))
-            // then we run as usual 
-            // set counter back to 1
-    e.preventDefault()
+    if (randomButtonClickCount === 1){
+        console.log(randomButtonClickCount)
+        e.preventDefault()
     console.log("clicked")
-    //window.setTimeout(function(){location.reload()},25000)
-
     let quoteSpace = document.createElement("p")
-    
     quoteSpace.innerText = `${randomQuote.content}`
-
     random.append(quoteSpace)
+    randomButtonClickCount += 1
+    } else {
+        // window.location.reload()
+        e.preventDefault()
+    console.log("clicked")
+    let quoteSpace = document.createElement("p")
+    quoteSpace.innerText = `${randomQuote.content}`
+    randomButtonClickCount === 2
+    }
+
+
 })
 console.log(random)
 })
@@ -64,3 +68,13 @@ console.log(random)
 
 
 
+
+
+
+// fetch("http://api.quotable.io/random")
+    // .then((res)=>res.json())
+    // .then((quote)=>{
+    //     console.log(quote)
+
+
+    // })
