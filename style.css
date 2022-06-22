@@ -1,4 +1,10 @@
-html, body{
-    background-color: brown;
-
+html{
+    background-image: url(/src/Background.jpeg);
 }
+
+#Socrates img {
+    width: 54.78px;
+    height: 90px;
+}
+
+/* 1.6428 /
