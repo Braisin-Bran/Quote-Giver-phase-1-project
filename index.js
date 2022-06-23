@@ -24,31 +24,30 @@ console.log(form);
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   let searchResult = document.querySelector("#search-bar").value;
-  let target = document.querySelector("#searchResultArea")
-  target.innerText=""
+  let target = document.querySelector("#searchResultArea");
+  target.innerText = "";
   fetch(
     `http://api.quotable.io/search/quotes?query=${searchResult}&fields=author`
   )
     .then((res) => res.json())
     .then((searchData) => {
-        console.log(searchData);
-        searchData.results.forEach(quote =>{
-            console.log(quote)
-            let quotes = document.createElement("p");
+      console.log(searchData);
+      searchData.results.forEach((quote) => {
+        console.log(quote);
+        let quotes = document.createElement("p");
 
-            quotes.innerText = `"${quote.content}" by ${quote.author}`
-            
+        quotes.innerText = `"${quote.content}" by ${quote.author}`;
+
         target.append(quotes);
-        })
-    //   authors.forEach((quoteList) => {
-    //     let resultAuthor = author.results.content;
-    //     console.log(authors);
-    //     e.preventDefault();
-    //     let quotes = document.createElement("p");
-    //     quotes.innerText = `${resultAuthor}`;
-    //     quoteList.append(p);
-    //   });
-      
+      });
+      //   authors.forEach((quoteList) => {
+      //     let resultAuthor = author.results.content;
+      //     console.log(authors);
+      //     e.preventDefault();
+      //     let quotes = document.createElement("p");
+      //     quotes.innerText = `${resultAuthor}`;
+      //     quoteList.append(p);
+      //   });
     });
 });
 
